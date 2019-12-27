@@ -1,0 +1,63 @@
+{
+  "name": "blog.services",
+  "version": "1.0.0",
+  "description": "blog services interfaces",
+  "private": true,
+  "dependencies": {
+    "egg-scripts": "^2.10.0",
+    "midway": "^1.0.0",
+    "mysql": "^2.17.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.5.5",
+    "@waiting/eslint-config": "^2.1.0",
+    "cross-env": "^6.0.0",
+    "egg-ci": "^1.8.0",
+    "egg-cors": "^2.2.3",
+    "eslint": "^6.0.0",
+    "midway-bin": "1",
+    "midway-mock": "1",
+    "mocha": "^6.2.0",
+    "ts-node": "^8.3.0",
+    "tslib": "^1.8.1",
+    "typescript": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "scripts": {
+    "build": "midway-bin build -c",
+    "ci": "npm run cov",
+    "clean": "midway-bin clean",
+    "cov": "midway-bin cov --ts",
+    "debug": "cross-env NODE_ENV=local midway-bin debug --ts",
+    "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
+    "devtest": "cross-env TS_NODE_PROJECT=test/tsconfig.json midway-bin test --ts",
+    "lint": "eslint --fix {src,test}/**/*.ts",
+    "start": "egg-scripts start --daemon --title=egg-server-blog.services --framework=midway --ts",
+    "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
+    "stop": "egg-scripts stop --title=egg-server-blog.services",
+    "test": "npm run lint && npm run devtest"
+  },
+  "ci": {
+    "version": "10, 12"
+  },
+  "midway-bin-clean": [
+    ".vscode/.tsbuildinfo",
+    "dist"
+  ],
+  "midway-bin-build": {
+    "include": [
+      "app/public",
+      "app/view"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Philip",
+  "license": "MIT"
+}
