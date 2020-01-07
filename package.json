@@ -4,6 +4,8 @@
   "description": "blog services interfaces",
   "private": true,
   "dependencies": {
+    "@types/mysql": "^2.15.8",
+    "@types/redis": "^2.8.14",
     "egg-scripts": "^2.10.0",
     "midway": "^1.0.0",
     "mysql": "^2.17.1",

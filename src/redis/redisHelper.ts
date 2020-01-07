@@ -1,4 +1,4 @@
-import redis from 'redis'
+import redis = require('redis')
 import config from './config'
 
 const client = redis.createClient(config.port, config.url)
@@ -15,8 +15,8 @@ client.on('connect', function (): void {
 client.auth(config.password);
 
 class RedisHelper {
-    setString (key: String, value: String, expire: number): Promise<any> {
-        return new Promise((resolve, reject) : void {
+    setString (key: string, value: string, expire: number): Promise<any> {
+        return new Promise(function (resolve, reject) : void {
             client.set(key, value, function (err: any, result: any): void {
 
                 if (err) {
@@ -35,7 +35,7 @@ class RedisHelper {
 
     
     getString (key: any): Promise<any> {
-        return new Promise((resolve: Function, reject: Function) :void {
+        return new Promise(function (resolve: Function, reject: Function) :void {
             client.get(key, function (err: any, result: any): void {
                 if (err) {
                     console.log(err);

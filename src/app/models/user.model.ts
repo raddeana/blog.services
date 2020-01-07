@@ -2,7 +2,7 @@
  * 用户信息
  */
 export interface UserInfo {
-    id: number
+    id: string
     user_name: string
     phone: string
     email?: string

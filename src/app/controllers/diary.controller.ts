@@ -1,5 +1,5 @@
 /**
- * 用户信息
+ * 日记 controller
  * @author Philip
  */
 import { Context, controller, get, inject, provide } from 'midway'
@@ -14,8 +14,8 @@ export class DiaryController {
 
   @get('/:id', { middleware: ['authorizeMiddleware'] })
   public async getUser(ctx: Context): Promise<void> {
-    const id =+ ctx.params.id
-    const user = await this.diaryService.getUser({ id })
+    const id = ctx.params.id
+    const user = await this.diaryService.getUser(id)
 
     ctx.body = user
   }

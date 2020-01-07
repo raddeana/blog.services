@@ -8,9 +8,9 @@ export default class DiaryService {
   /**
    * 读取用户信息
    */
-  public async getUser(): Promise<Diary> {
+  public async getUser(id: string): Promise<Diary> {
     return {
-      id: 1,
+      id,
       user_name: 'mockedName',
       phone: '12345678901',
       email: 'xxx.xxx@xxx.com',

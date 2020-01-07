@@ -1,4 +1,4 @@
-import mysql from 'mysql'
+import mysql = require('mysql')
 import config from './config'
 
 const connection = mysql.createConnection(config)

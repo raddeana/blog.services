@@ -3,7 +3,7 @@
  */
 
 export interface Content {
-  id: number
+  id: string
   user_name: string
   phone: string
   email?: string
